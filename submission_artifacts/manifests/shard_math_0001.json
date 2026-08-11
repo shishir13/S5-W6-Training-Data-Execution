@@ -1,0 +1,15 @@
+{
+  "shard_id": "shard_math_0001",
+  "lane": "math",
+  "shard_file": "shards/shard_math_0001.bin",
+  "token_count": 126,
+  "sha256_content": "873e65a1037d04e154ba0da0fa947182c55418da73843e13dbbc0079d75607cf",
+  "tokenizer_id": "gpt2",
+  "tokenizer_hash": "5ef55c89f5439ed6ccc0d6960875e06967265c89552024d42d91844a56699755",
+  "created_at": "2026-08-11T13:53:23.996589+00:00",
+  "is_eval": false,
+  "doc_count": 1,
+  "source_doc_ids": [
+    "math_001"
+  ]
+}

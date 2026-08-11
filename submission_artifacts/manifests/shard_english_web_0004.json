@@ -1,0 +1,15 @@
+{
+  "shard_id": "shard_english_web_0004",
+  "lane": "english_web",
+  "shard_file": "shards/shard_english_web_0004.bin",
+  "token_count": 53,
+  "sha256_content": "ff042a5ebd0e823681ec113193fa306301e069520158c52918cd764d4dccca83",
+  "tokenizer_id": "gpt2",
+  "tokenizer_hash": "5ef55c89f5439ed6ccc0d6960875e06967265c89552024d42d91844a56699755",
+  "created_at": "2026-08-11T13:53:23.954020+00:00",
+  "is_eval": false,
+  "doc_count": 1,
+  "source_doc_ids": [
+    "english_web_004"
+  ]
+}

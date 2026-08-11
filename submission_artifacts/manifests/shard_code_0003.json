@@ -1,0 +1,15 @@
+{
+  "shard_id": "shard_code_0003",
+  "lane": "code",
+  "shard_file": "shards/shard_code_0003.bin",
+  "token_count": 501,
+  "sha256_content": "4708d057a62ce6b5b619bae8db3f4d774e5ec903f81f637bdb6a1ed146287e98",
+  "tokenizer_id": "gpt2",
+  "tokenizer_hash": "5ef55c89f5439ed6ccc0d6960875e06967265c89552024d42d91844a56699755",
+  "created_at": "2026-08-11T13:53:23.967588+00:00",
+  "is_eval": false,
+  "doc_count": 1,
+  "source_doc_ids": [
+    "code_003"
+  ]
+}

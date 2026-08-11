@@ -1,0 +1,15 @@
+{
+  "shard_id": "shard_eval_0002",
+  "lane": "eval",
+  "shard_file": "shards/shard_eval_0002.bin",
+  "token_count": 19,
+  "sha256_content": "0356fea213005856a9360f4354b27fd1acdca729d399feafa6252d4acba044d4",
+  "tokenizer_id": "gpt2",
+  "tokenizer_hash": "5ef55c89f5439ed6ccc0d6960875e06967265c89552024d42d91844a56699755",
+  "created_at": "2026-08-11T13:53:24.009914+00:00",
+  "is_eval": true,
+  "doc_count": 1,
+  "source_doc_ids": [
+    "eval_002"
+  ]
+}

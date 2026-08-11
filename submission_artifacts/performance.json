@@ -1,0 +1,11 @@
+{
+  "total_steps": 59,
+  "total_tokens": 14339,
+  "total_loss_bearing_tokens": 13077,
+  "total_time_sec": 1.231,
+  "tokens_per_sec": 11648.3,
+  "loss_tokens_per_sec": 10623.1,
+  "mean_packing_utilization_pct": 46.56,
+  "min_packing_utilization_pct": 19.53,
+  "max_packing_utilization_pct": 69.53
+}

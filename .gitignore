@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated artifacts (committed for submission, but not re-checked in)
+submission_artifacts/checkpoints/*.pt
+submission_artifacts/ledgers/*.jsonl
+
+# Env
+.env
+*.env
+
+# uv
+uv.lock
