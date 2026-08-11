@@ -1,230 +1,262 @@
-2026-08-11 19:23:22,059 INFO 
+2026-08-11 19:45:17,678 INFO 
 ============================================================
   Phase 0: Setup
 ============================================================
-2026-08-11 19:23:22,078 INFO artifacts root: C:\Users\I768671\OneDrive - SAP SE\Codebase\v5\S5-W6-Training-Data-Execution\submission_artifacts
-2026-08-11 19:23:22,078 INFO total_steps=60, seq_len=256, batch_lanes=2
-2026-08-11 19:23:22,078 INFO 
+2026-08-11 19:45:17,699 INFO artifacts root: C:\Users\I768671\OneDrive - SAP SE\Codebase\v5\S5-W6-Training-Data-Execution\submission_artifacts
+2026-08-11 19:45:17,700 INFO total_steps=60, seq_len=256, batch_lanes=2
+2026-08-11 19:45:17,701 INFO 
 ============================================================
   Phase 1: Corpus -> Tokenization -> Shards -> Manifests
 ============================================================
-2026-08-11 19:23:22,078 INFO Loading GPT-2 tokenizer (may download on first run)...
-2026-08-11 19:23:22,480 INFO HTTP Request: HEAD https://huggingface.co/gpt2/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-08-11 19:23:22,481 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-2026-08-11 19:23:22,766 INFO HTTP Request: GET https://huggingface.co/api/models/gpt2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
-2026-08-11 19:23:23,076 INFO HTTP Request: GET https://huggingface.co/api/models/openai-community/gpt2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-08-11 19:23:23,390 INFO HTTP Request: GET https://huggingface.co/api/models/gpt2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
-2026-08-11 19:23:23,656 INFO HTTP Request: GET https://huggingface.co/api/models/openai-community/gpt2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-08-11 19:23:23,940 INFO Tokenizer loaded. hash=5ef55c89f5439ed6...
-2026-08-11 19:23:23,941 INFO Generated 23 documents across 5 lanes
-2026-08-11 19:23:24,011 INFO Created 23 shards
-2026-08-11 19:23:24,011 INFO [PASS] shards_created (23 shards written)
-2026-08-11 19:23:24,042 INFO [PASS] tokenizer_hash_verified
-2026-08-11 19:23:24,042 INFO [PASS] all_shard_hashes_verified (23 shards)
-2026-08-11 19:23:24,042 INFO [PASS] manifests_validated (23 manifests)
-2026-08-11 19:23:24,043 INFO Eval shards (firewall): ['shard_eval_0000', 'shard_eval_0001', 'shard_eval_0002']
-2026-08-11 19:23:24,043 INFO [PASS] eval_shard_blocked (3 eval shards isolated)
-2026-08-11 19:23:24,043 INFO 
+2026-08-11 19:45:17,701 INFO Loading GPT-2 tokenizer (may download on first run)...
+2026-08-11 19:45:18,299 INFO HTTP Request: HEAD https://huggingface.co/gpt2/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-11 19:45:18,689 INFO HTTP Request: GET https://huggingface.co/api/models/gpt2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 19:45:18,987 INFO HTTP Request: GET https://huggingface.co/api/models/openai-community/gpt2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-11 19:45:19,252 INFO HTTP Request: GET https://huggingface.co/api/models/gpt2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 19:45:19,530 INFO HTTP Request: GET https://huggingface.co/api/models/openai-community/gpt2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-11 19:45:19,805 INFO Tokenizer loaded. hash=5ef55c89f5439ed6...
+2026-08-11 19:45:19,806 INFO Generated 23 documents across 5 lanes
+2026-08-11 19:45:19,880 INFO Created 23 shards
+2026-08-11 19:45:19,880 INFO [PASS] shards_created (23 shards written)
+2026-08-11 19:45:19,956 INFO [PASS] tokenizer_hash_verified
+2026-08-11 19:45:19,956 INFO [PASS] all_shard_hashes_verified (23 shards)
+2026-08-11 19:45:19,956 INFO [PASS] manifests_validated (23 manifests)
+2026-08-11 19:45:19,956 INFO Eval shards (firewall): ['shard_eval_0000', 'shard_eval_0001', 'shard_eval_0002']
+2026-08-11 19:45:19,956 INFO [PASS] eval_shard_blocked (3 eval shards isolated)
+2026-08-11 19:45:19,956 INFO 
 ============================================================
   Phase 2: Curriculum Schedule
 ============================================================
-2026-08-11 19:23:24,043 INFO   phase=warmup steps=[0,2) ctx=128
-2026-08-11 19:23:24,043 INFO   phase=foundation steps=[2,33) ctx=256
-2026-08-11 19:23:24,043 INFO   phase=skill_ramp steps=[33,51) ctx=256
-2026-08-11 19:23:24,043 INFO   phase=anneal steps=[51,60) ctx=256
-2026-08-11 19:23:24,043 INFO [PASS] mixture_compiled
-2026-08-11 19:23:24,043 INFO 
+2026-08-11 19:45:19,956 INFO   phase=warmup steps=[0,2) ctx=128
+2026-08-11 19:45:19,956 INFO   phase=foundation steps=[2,33) ctx=256
+2026-08-11 19:45:19,956 INFO   phase=skill_ramp steps=[33,51) ctx=256
+2026-08-11 19:45:19,956 INFO   phase=anneal steps=[51,60) ctx=256
+2026-08-11 19:45:19,956 INFO [PASS] mixture_compiled
+2026-08-11 19:45:19,956 INFO 
 ============================================================
   Phase 3: Model + Optimizer Init
 ============================================================
-2026-08-11 19:23:25,975 INFO TinyGPT initialized: 6,860,160 parameters
-2026-08-11 19:23:25,976 INFO 
+2026-08-11 19:45:21,829 INFO TinyGPT initialized: 6,860,160 parameters
+2026-08-11 19:45:21,831 INFO 
 ============================================================
   Phase 4: Training steps 0..24 (crash at step 25)
 ============================================================
-2026-08-11 19:23:26,119 INFO step=  0 loss=69.3147 ppl=1267682334530994285512539242496.00 lane=english_web  decision=floor_override   batch_id=25d77d33c44c3127 util=59%
-2026-08-11 19:23:26,119 INFO [PASS] batches_packed (first batch assembled and loss computed)
-2026-08-11 19:23:26,119 INFO [PASS] opus_decisions_recorded (first OPUS decision logged to ledger)
-2026-08-11 19:23:26,251 INFO step=  1 loss=88.0128 ppl=167294212612838259535124311868245540864.00 lane=math         decision=floor_override   batch_id=25b9a8733ad5e280 util=35%
-2026-08-11 19:23:26,386 INFO step=  2 loss=85.5403 ppl=14114743076132636018793745112780242944.00 lane=instruction  decision=floor_override   batch_id=156ef8661a591b03 util=27%
-2026-08-11 19:23:26,521 INFO step=  3 loss=58.3964 ppl=22973798736169769310879744.00 lane=english_web  decision=accept           batch_id=546b14eb68e1b194 util=44%
-2026-08-11 19:23:26,670 INFO step=  4 loss=66.2827 ppl=61124314193242433786155630592.00 lane=code         decision=accept           batch_id=5124e85bf7fe4902 util=61%
-2026-08-11 19:23:26,848 INFO step=  5 loss=59.7558 ppl=89454773714075635257704448.00 lane=code         decision=accept           batch_id=de16290be8632163 util=59%
-2026-08-11 19:23:26,985 INFO step=  6 loss=72.5921 ppl=33600011385927241519519317884928.00 lane=english_web  decision=reject           batch_id=bcf72a5713e7556a util=19%
-2026-08-11 19:23:27,131 INFO step=  7 loss=58.1468 ppl=17899454541315690570186752.00 lane=instruction  decision=defer            batch_id=961d3f56c4e2f4c1 util=70%
-2026-08-11 19:23:27,297 INFO step=  8 loss=75.1965 ppl=454404615262793021278381395673088.00 lane=instruction  decision=accept           batch_id=7c55f35fb935264a util=40%
-2026-08-11 19:23:27,430 INFO step=  9 loss=46.0770 ppl=102567132956526116864.00 lane=instruction  decision=reject           batch_id=ebd5e4d366384f55 util=63%
-2026-08-11 19:23:27,569 INFO [CHECKPOINT] saved: ckpt_00010_coff37583.pt
-2026-08-11 19:23:27,569 INFO [PASS] checkpoint_saved (step=10)
-2026-08-11 19:23:27,755 INFO step= 10 loss=40.9361 ppl=600261605631983616.00 lane=code         decision=reject           batch_id=84be1a407dd1635a util=61%
-2026-08-11 19:23:27,897 INFO step= 11 loss=50.4942 ppl=8498713020463331672064.00 lane=english_web  decision=accept           batch_id=7b969c901ed2323b util=21%
-2026-08-11 19:23:28,029 INFO step= 12 loss=30.5639 ppl=18781873111040.00 lane=code         decision=accept           batch_id=a46a9e4f5882e680 util=70%
-2026-08-11 19:23:28,187 INFO step= 13 loss=40.9831 ppl=629099940202676224.00 lane=math         decision=accept           batch_id=361c2ba228d717b2 util=41%
-2026-08-11 19:23:28,378 INFO step= 14 loss=29.2831 ppl=5217806450688.00 lane=code         decision=reject           batch_id=3e0c71aff6c27c49 util=53%
-2026-08-11 19:23:28,517 INFO step= 15 loss=40.1342 ppl=269198104752816128.00 lane=english_web  decision=accept           batch_id=0a2b812c6f913571 util=21%
-2026-08-11 19:23:28,679 INFO step= 16 loss=38.8039 ppl=71175193006964736.00 lane=instruction  decision=accept           batch_id=6be2ef28ba23f608 util=34%
-2026-08-11 19:23:28,832 INFO step= 17 loss=23.9575 ppl=25387708416.00 lane=english_web  decision=accept           batch_id=537d435b36e67a05 util=61%
-2026-08-11 19:23:28,990 INFO step= 18 loss=36.7995 ppl=9589765397544960.00 lane=instruction  decision=accept           batch_id=82c04bb9476b5c8e util=31%
-2026-08-11 19:23:29,114 INFO step= 19 loss=36.6350 ppl=8135065343098880.00 lane=math         decision=accept           batch_id=7dcd9de3070095dd util=45%
-2026-08-11 19:23:29,255 INFO [CHECKPOINT] saved: ckpt_00020_coff43030.pt
-2026-08-11 19:23:29,255 INFO [PASS] checkpoint_saved (step=20)
-2026-08-11 19:23:29,443 INFO step= 20 loss=35.6356 ppl=2994527702876160.00 lane=math         decision=accept           batch_id=acb3c2108abe826c util=45%
-2026-08-11 19:23:29,575 INFO step= 21 loss=29.5499 ppl=6813264117760.00 lane=english_web  decision=accept           batch_id=274e094d28c38b1a util=18%
-2026-08-11 19:23:29,703 INFO step= 22 loss=32.5035 ppl=130648601788416.00 lane=english_web  decision=reject           batch_id=db54ce88f99375b2 util=21%
-2026-08-11 19:23:29,828 INFO step= 23 loss=22.0775 ppl=3873628160.00 lane=code         decision=accept           batch_id=81bbf233571f06eb util=85%
-2026-08-11 19:23:29,960 INFO step= 24 loss=22.0906 ppl=3924817664.00 lane=english_web  decision=accept           batch_id=693853753f586e0e util=45%
-2026-08-11 19:23:29,960 WARNING [CRASH] Deliberate crash at step 25 -- writing crash.flag
-2026-08-11 19:23:29,963 INFO Crash simulated. Re-running for recovery...
-2026-08-11 19:23:34,753 INFO 
+2026-08-11 19:45:21,968 INFO step=  0 loss=69.3147 ppl=1267682334530994285512539242496.00 lane=english_web  decision=floor_override   batch_id=25d77d33c44c3127 util=59%
+2026-08-11 19:45:21,969 INFO [PASS] batches_packed (first batch assembled and loss computed)
+2026-08-11 19:45:21,969 INFO [PASS] opus_decisions_recorded (first OPUS decision logged to ledger)
+2026-08-11 19:45:22,096 INFO step=  1 loss=88.0128 ppl=167294212612838259535124311868245540864.00 lane=math         decision=floor_override   batch_id=25b9a8733ad5e280 util=35%
+2026-08-11 19:45:22,215 INFO step=  2 loss=85.5403 ppl=14114743076132636018793745112780242944.00 lane=instruction  decision=floor_override   batch_id=156ef8661a591b03 util=27%
+2026-08-11 19:45:22,330 INFO step=  3 loss=58.3964 ppl=22973798736169769310879744.00 lane=english_web  decision=accept           batch_id=546b14eb68e1b194 util=44%
+2026-08-11 19:45:22,443 INFO step=  4 loss=66.2827 ppl=61124314193242433786155630592.00 lane=code         decision=accept           batch_id=5124e85bf7fe4902 util=61%
+2026-08-11 19:45:22,562 INFO step=  5 loss=59.7558 ppl=89454773714075635257704448.00 lane=code         decision=accept           batch_id=de16290be8632163 util=59%
+2026-08-11 19:45:22,675 INFO step=  6 loss=72.5921 ppl=33600011385927241519519317884928.00 lane=english_web  decision=reject           batch_id=bcf72a5713e7556a util=19%
+2026-08-11 19:45:22,792 INFO step=  7 loss=58.1468 ppl=17899454541315690570186752.00 lane=instruction  decision=defer            batch_id=961d3f56c4e2f4c1 util=70%
+2026-08-11 19:45:22,910 INFO step=  8 loss=75.1965 ppl=454404615262793021278381395673088.00 lane=instruction  decision=accept           batch_id=7c55f35fb935264a util=40%
+2026-08-11 19:45:23,034 INFO step=  9 loss=46.0770 ppl=102567132956526116864.00 lane=instruction  decision=reject           batch_id=ebd5e4d366384f55 util=63%
+2026-08-11 19:45:23,167 INFO [CHECKPOINT] saved: ckpt_00010_coff5466.pt
+2026-08-11 19:45:23,168 INFO [PASS] checkpoint_saved (step=10)
+2026-08-11 19:45:23,332 INFO step= 10 loss=40.9361 ppl=600261605631983616.00 lane=code         decision=reject           batch_id=84be1a407dd1635a util=61%
+2026-08-11 19:45:23,472 INFO step= 11 loss=50.4942 ppl=8498713020463331672064.00 lane=english_web  decision=accept           batch_id=7b969c901ed2323b util=21%
+2026-08-11 19:45:23,588 INFO step= 12 loss=30.5639 ppl=18781873111040.00 lane=code         decision=accept           batch_id=a46a9e4f5882e680 util=70%
+2026-08-11 19:45:23,712 INFO step= 13 loss=40.9831 ppl=629099940202676224.00 lane=math         decision=accept           batch_id=361c2ba228d717b2 util=41%
+2026-08-11 19:45:23,838 INFO step= 14 loss=29.2831 ppl=5217806450688.00 lane=code         decision=reject           batch_id=3e0c71aff6c27c49 util=53%
+2026-08-11 19:45:23,962 INFO step= 15 loss=40.1342 ppl=269198104752816128.00 lane=english_web  decision=accept           batch_id=0a2b812c6f913571 util=21%
+2026-08-11 19:45:24,090 INFO step= 16 loss=38.8039 ppl=71175193006964736.00 lane=instruction  decision=accept           batch_id=6be2ef28ba23f608 util=34%
+2026-08-11 19:45:24,212 INFO step= 17 loss=23.9575 ppl=25387708416.00 lane=english_web  decision=accept           batch_id=537d435b36e67a05 util=61%
+2026-08-11 19:45:24,334 INFO step= 18 loss=36.7995 ppl=9589765397544960.00 lane=instruction  decision=accept           batch_id=82c04bb9476b5c8e util=31%
+2026-08-11 19:45:24,451 INFO step= 19 loss=36.6350 ppl=8135065343098880.00 lane=math         decision=accept           batch_id=7dcd9de3070095dd util=45%
+2026-08-11 19:45:24,574 INFO [CHECKPOINT] saved: ckpt_00020_coff10904.pt
+2026-08-11 19:45:24,574 INFO [PASS] checkpoint_saved (step=20)
+2026-08-11 19:45:24,730 INFO step= 20 loss=35.6356 ppl=2994527702876160.00 lane=math         decision=accept           batch_id=acb3c2108abe826c util=45%
+2026-08-11 19:45:24,868 INFO step= 21 loss=29.5499 ppl=6813264117760.00 lane=english_web  decision=accept           batch_id=274e094d28c38b1a util=18%
+2026-08-11 19:45:24,988 INFO step= 22 loss=32.5035 ppl=130648601788416.00 lane=english_web  decision=reject           batch_id=db54ce88f99375b2 util=21%
+2026-08-11 19:45:25,116 INFO step= 23 loss=22.0775 ppl=3873628160.00 lane=code         decision=accept           batch_id=81bbf233571f06eb util=85%
+2026-08-11 19:45:25,252 INFO step= 24 loss=22.0906 ppl=3924817664.00 lane=english_web  decision=accept           batch_id=693853753f586e0e util=45%
+2026-08-11 19:45:25,253 WARNING [CRASH] Deliberate crash at step 25 -- writing crash.flag
+2026-08-11 19:45:25,255 INFO Crash simulated. Re-running for recovery...
+2026-08-11 19:45:30,217 INFO 
 ============================================================
   Phase 5: Crash Recovery
 ============================================================
-2026-08-11 19:23:34,753 INFO crash.flag detected — initiating crash recovery
-2026-08-11 19:23:35,259 INFO HTTP Request: HEAD https://huggingface.co/gpt2/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-08-11 19:23:35,260 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-2026-08-11 19:23:35,508 INFO HTTP Request: GET https://huggingface.co/api/models/gpt2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
-2026-08-11 19:23:35,753 INFO HTTP Request: GET https://huggingface.co/api/models/openai-community/gpt2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-08-11 19:23:36,078 INFO HTTP Request: GET https://huggingface.co/api/models/gpt2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
-2026-08-11 19:23:36,392 INFO HTTP Request: GET https://huggingface.co/api/models/openai-community/gpt2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-08-11 19:23:37,301 INFO Loading checkpoint: ckpt_00050_coff26617.pt
-2026-08-11 19:23:37,333 INFO Resuming from step 50, next_expected_batch_id=6f765f661ad16ad0
-2026-08-11 19:23:37,389 INFO Ledgers truncated to offsets: consumption=26617, learning=15644
-2026-08-11 19:23:39,303 INFO step= 50 loss=23.4679 ppl=15559503872.00 lane=english_web  decision=reject           batch_id=b0faf96ff3df17ad util=27%
-2026-08-11 19:23:39,303 INFO Resume verification: next_expected=6f765f661ad16ad0 | produced=b0faf96ff3df17ad
-2026-08-11 19:23:39,303 WARNING Resume batch_id mismatch: expected=6f765f661ad16ad0 produced=b0faf96ff3df17ad
-2026-08-11 19:23:39,303 INFO [PASS] resume_next_batch_matched (ledger byte-offset continuity verified)
-2026-08-11 19:23:39,304 INFO 
+2026-08-11 19:45:30,218 INFO crash.flag detected — initiating crash recovery
+2026-08-11 19:45:30,613 INFO HTTP Request: HEAD https://huggingface.co/gpt2/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-11 19:45:30,613 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-11 19:45:30,875 INFO HTTP Request: GET https://huggingface.co/api/models/gpt2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 19:45:31,124 INFO HTTP Request: GET https://huggingface.co/api/models/openai-community/gpt2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-11 19:45:31,386 INFO HTTP Request: GET https://huggingface.co/api/models/gpt2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-08-11 19:45:31,673 INFO HTTP Request: GET https://huggingface.co/api/models/openai-community/gpt2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-11 19:45:32,512 INFO Loading checkpoint: ckpt_00020_coff10904.pt
+2026-08-11 19:45:32,559 INFO Resuming from step 20, next_expected_batch_id=acb3c2108abe826c
+2026-08-11 19:45:32,607 INFO Ledgers truncated to offsets: consumption=10904, learning=6479
+2026-08-11 19:45:34,597 INFO step= 20 loss=35.6356 ppl=2994527702876160.00 lane=math         decision=accept           batch_id=acb3c2108abe826c util=45%
+2026-08-11 19:45:34,598 INFO Resume verification: next_expected=acb3c2108abe826c | produced=acb3c2108abe826c
+2026-08-11 19:45:34,598 INFO [PASS] resume_next_batch_matched
+2026-08-11 19:45:34,599 INFO 
 ============================================================
   Phase 6: Continue training steps to completion
 ============================================================
-2026-08-11 19:23:39,304 INFO run resumed from checkpoint step=50, continuing to step 59
-2026-08-11 19:23:39,412 INFO step= 51 loss=21.2323 ppl=1663759360.00 lane=english_web  decision=accept           batch_id=cffc77150bd7e313 util=20%
-2026-08-11 19:23:39,520 INFO step= 52 loss=17.3570 ppl=34517912.00 lane=code         decision=accept           batch_id=fe1ff94070b52a67 util=70%
-2026-08-11 19:23:39,634 INFO step= 53 loss=13.1580 ppl=518122.31 lane=instruction  decision=reject           batch_id=cce7d10cbe295417 util=70%
-2026-08-11 19:23:39,758 INFO step= 54 loss=17.3443 ppl=34083764.00 lane=english_web  decision=reject           batch_id=9649c0fb31520d26 util=54%
-2026-08-11 19:23:39,881 INFO step= 55 loss=26.1149 ppl=219565785088.00 lane=english_web  decision=accept           batch_id=54f8c91fdfbce710 util=30%
-2026-08-11 19:23:40,014 INFO step= 56 loss=21.6215 ppl=2455277824.00 lane=math         decision=accept           batch_id=1463bc07df7cd450 util=34%
-2026-08-11 19:23:40,145 INFO step= 57 loss=25.5078 ppl=119650533376.00 lane=instruction  decision=reject           batch_id=25e2fef6a6e46534 util=40%
-2026-08-11 19:23:40,273 INFO step= 58 loss=11.6209 ppl=111406.31 lane=code         decision=accept           batch_id=9cd0424e8ada6476 util=68%
-2026-08-11 19:23:40,406 INFO step= 59 loss=15.9893 ppl=8791291.00 lane=english_web  decision=accept           batch_id=39a50c0523585d72 util=55%
-2026-08-11 19:23:40,407 INFO [PASS] training_completed_after_resume
-2026-08-11 19:23:40,407 INFO 
+2026-08-11 19:45:34,600 INFO run resumed from checkpoint step=20, continuing to step 59
+2026-08-11 19:45:34,719 INFO step= 21 loss=29.5499 ppl=6813264117760.00 lane=english_web  decision=accept           batch_id=274e094d28c38b1a util=18%
+2026-08-11 19:45:34,833 INFO step= 22 loss=32.5035 ppl=130648601788416.00 lane=english_web  decision=reject           batch_id=db54ce88f99375b2 util=21%
+2026-08-11 19:45:34,947 INFO step= 23 loss=22.0775 ppl=3873628160.00 lane=code         decision=accept           batch_id=81bbf233571f06eb util=85%
+2026-08-11 19:45:35,080 INFO step= 24 loss=22.0906 ppl=3924817664.00 lane=english_web  decision=accept           batch_id=693853753f586e0e util=45%
+2026-08-11 19:45:35,196 INFO step= 25 loss=23.4841 ppl=15812761600.00 lane=code         decision=accept           batch_id=2035b38d786c569e util=55%
+2026-08-11 19:45:35,319 INFO step= 26 loss=31.4597 ppl=46000915873792.00 lane=math         decision=accept           batch_id=dd5ab411567fba3e util=49%
+2026-08-11 19:45:35,458 INFO step= 27 loss=24.0320 ppl=27351097344.00 lane=instruction  decision=accept           batch_id=176e9250ea87461a util=70%
+2026-08-11 19:45:35,587 INFO step= 28 loss=29.9983 ppl=10668532039680.00 lane=english_web  decision=accept           batch_id=732654817d2b13e4 util=19%
+2026-08-11 19:45:35,708 INFO step= 29 loss=29.9364 ppl=10027588911104.00 lane=instruction  decision=accept           batch_id=6d76144d5f0127c4 util=30%
+2026-08-11 19:45:35,823 INFO [CHECKPOINT] saved: ckpt_00030_coff16363.pt
+2026-08-11 19:45:35,981 INFO step= 30 loss=29.4075 ppl=5909257388032.00 lane=english_web  decision=accept           batch_id=616c8064335c8fb5 util=29%
+2026-08-11 19:45:36,115 INFO step= 31 loss=19.6893 ppl=355603616.00 lane=code         decision=reject           batch_id=e9d2072c7e208b77 util=68%
+2026-08-11 19:45:36,238 INFO step= 32 loss=17.6077 ppl=44353756.00 lane=code         decision=reject           batch_id=cbc5203ffd31e58a util=100%
+2026-08-11 19:45:36,361 INFO step= 33 loss=30.5024 ppl=17661410934784.00 lane=english_web  decision=reject           batch_id=5547568667351c9f util=21%
+2026-08-11 19:45:36,483 INFO step= 34 loss=28.9477 ppl=3731168165888.00 lane=math         decision=accept           batch_id=05e1966216d05235 util=40%
+2026-08-11 19:45:36,607 INFO step= 35 loss=18.9777 ppl=174552736.00 lane=math         decision=accept           batch_id=32c95084e8c441a8 util=76%
+2026-08-11 19:45:36,746 INFO step= 36 loss=25.8300 ppl=165135532032.00 lane=english_web  decision=accept           batch_id=38ddc5fa7911314e util=21%
+2026-08-11 19:45:36,869 INFO step= 37 loss=16.5379 ppl=15216565.00 lane=english_web  decision=accept           batch_id=f73028876d366d41 util=61%
+2026-08-11 19:45:36,993 INFO step= 38 loss=21.0449 ppl=1379365504.00 lane=code         decision=accept           batch_id=bb934ed62421356f util=70%
+2026-08-11 19:45:37,121 INFO step= 39 loss=27.1400 ppl=612028776448.00 lane=instruction  decision=accept           batch_id=a3bd0ab60b86567c util=30%
+2026-08-11 19:45:37,235 INFO [CHECKPOINT] saved: ckpt_00040_coff21794.pt
+2026-08-11 19:45:37,389 INFO step= 40 loss=24.7672 ppl=57052114944.00 lane=math         decision=accept           batch_id=38fdc0e7dfffde82 util=42%
+2026-08-11 19:45:37,522 INFO step= 41 loss=20.2729 ppl=637372800.00 lane=instruction  decision=reject           batch_id=f5b56c5dd9ac53f4 util=70%
+2026-08-11 19:45:37,636 INFO step= 42 loss=26.4986 ppl=322244739072.00 lane=math         decision=accept           batch_id=5c578e70fd601740 util=34%
+2026-08-11 19:45:37,753 INFO step= 43 loss=25.2669 ppl=94030209024.00 lane=english_web  decision=reject           batch_id=1c06c88638d805e2 util=29%
+2026-08-11 19:45:37,870 INFO step= 44 loss=25.5517 ppl=125015130112.00 lane=instruction  decision=accept           batch_id=145b69fb374d4eae util=30%
+2026-08-11 19:45:37,993 INFO step= 45 loss=25.5977 ppl=130904825856.00 lane=instruction  decision=reject           batch_id=9d950582113abc9b util=35%
+2026-08-11 19:45:38,113 INFO step= 46 loss=19.2782 ppl=235727888.00 lane=code         decision=reject           batch_id=c469c1ba3a89875c util=70%
+2026-08-11 19:45:38,232 INFO step= 47 loss=24.3405 ppl=37235716096.00 lane=math         decision=accept           batch_id=a37ac0522e19bbf9 util=37%
+2026-08-11 19:45:38,357 INFO step= 48 loss=18.2318 ppl=82791056.00 lane=instruction  decision=accept           batch_id=104bcabde326ba56 util=69%
+2026-08-11 19:45:38,510 INFO step= 49 loss=18.5546 ppl=114330456.00 lane=math         decision=accept           batch_id=6bd2bc68f8f955b3 util=67%
+2026-08-11 19:45:38,626 INFO [CHECKPOINT] saved: ckpt_00050_coff27211.pt
+2026-08-11 19:45:38,776 INFO step= 50 loss=16.4751 ppl=14290987.00 lane=code         decision=accept           batch_id=367d5b7bc5e4174f util=100%
+2026-08-11 19:45:38,904 INFO step= 51 loss=24.5186 ppl=44494397440.00 lane=math         decision=accept           batch_id=1d72a4c8b0b0013a util=44%
+2026-08-11 19:45:39,019 INFO step= 52 loss=16.8250 ppl=20276828.00 lane=math         decision=accept           batch_id=7153f33c905a2b5b util=58%
+2026-08-11 19:45:39,141 INFO step= 53 loss=13.9953 ppl=1196930.25 lane=code         decision=reject           batch_id=a0108e307e7042c1 util=70%
+2026-08-11 19:45:39,260 INFO step= 54 loss=17.5511 ppl=41913512.00 lane=code         decision=reject           batch_id=8233949c329b018a util=70%
+2026-08-11 19:45:39,382 INFO step= 55 loss=15.2482 ppl=4189922.50 lane=code         decision=accept           batch_id=a03bd6001e6be187 util=94%
+2026-08-11 19:45:39,501 INFO step= 56 loss=21.4601 ppl=2089314944.00 lane=english_web  decision=reject           batch_id=1fd5976e74ecca65 util=34%
+2026-08-11 19:45:39,633 INFO step= 57 loss=23.4099 ppl=14682408960.00 lane=english_web  decision=accept           batch_id=ae1f1649cdd370b7 util=31%
+2026-08-11 19:45:39,749 INFO step= 58 loss=14.1457 ppl=1391252.25 lane=math         decision=accept           batch_id=d189937288f3183c util=73%
+2026-08-11 19:45:39,870 INFO step= 59 loss=15.6368 ppl=6179832.50 lane=code         decision=accept           batch_id=c47ab5f7dd4c41bf util=62%
+2026-08-11 19:45:39,871 INFO [PASS] training_completed_after_resume
+2026-08-11 19:45:39,871 INFO 
 ============================================================
   Phase 7: Replay
 ============================================================
-2026-08-11 19:23:40,407 INFO Replaying all consumption ledger entries...
-2026-08-11 19:23:40,530 INFO Replay: 59/59 batch_ids matched
-2026-08-11 19:23:40,530 INFO   replay step=0 MATCH orig=25d77d33c44c3127 replayed=25d77d33c44c3127
-2026-08-11 19:23:40,530 INFO   replay step=1 MATCH orig=fe1fa3421b3a03de replayed=fe1fa3421b3a03de
-2026-08-11 19:23:40,530 INFO   replay step=2 MATCH orig=015c7067870feb0e replayed=015c7067870feb0e
-2026-08-11 19:23:40,530 INFO   replay step=3 MATCH orig=41d49067fde2fa00 replayed=41d49067fde2fa00
-2026-08-11 19:23:40,531 INFO   replay step=4 MATCH orig=3dbc9b313199115d replayed=3dbc9b313199115d
-2026-08-11 19:23:40,531 INFO   replay step=5 MATCH orig=c146c8bceb217933 replayed=c146c8bceb217933
-2026-08-11 19:23:40,531 INFO   replay step=6 MATCH orig=35d79a20ef13b164 replayed=35d79a20ef13b164
-2026-08-11 19:23:40,531 INFO   replay step=7 MATCH orig=c0581c07e216b811 replayed=c0581c07e216b811
-2026-08-11 19:23:40,531 INFO   replay step=8 MATCH orig=6870a4ead8bdb8a8 replayed=6870a4ead8bdb8a8
-2026-08-11 19:23:40,531 INFO   replay step=9 MATCH orig=7c5d617b24709499 replayed=7c5d617b24709499
-2026-08-11 19:23:40,531 INFO   replay step=10 MATCH orig=9c79fc9f8cdbb206 replayed=9c79fc9f8cdbb206
-2026-08-11 19:23:40,531 INFO   replay step=11 MATCH orig=0e39ed1dd40d9d72 replayed=0e39ed1dd40d9d72
-2026-08-11 19:23:40,531 INFO   replay step=12 MATCH orig=a0787a2de5f273af replayed=a0787a2de5f273af
-2026-08-11 19:23:40,531 INFO   replay step=13 MATCH orig=4a6221c5eb3772d9 replayed=4a6221c5eb3772d9
-2026-08-11 19:23:40,531 INFO   replay step=14 MATCH orig=e626dcc9e3926a66 replayed=e626dcc9e3926a66
-2026-08-11 19:23:40,531 INFO   replay step=15 MATCH orig=950a87ccb6f8716f replayed=950a87ccb6f8716f
-2026-08-11 19:23:40,531 INFO   replay step=16 MATCH orig=14e84ad45113c9a5 replayed=14e84ad45113c9a5
-2026-08-11 19:23:40,532 INFO   replay step=17 MATCH orig=f2ff259d6c47c81c replayed=f2ff259d6c47c81c
-2026-08-11 19:23:40,532 INFO   replay step=18 MATCH orig=40d82f04abfb09ff replayed=40d82f04abfb09ff
-2026-08-11 19:23:40,532 INFO   replay step=19 MATCH orig=13a488ee9027d74a replayed=13a488ee9027d74a
-2026-08-11 19:23:40,532 INFO   replay step=21 MATCH orig=711a05aa0e996afc replayed=711a05aa0e996afc
-2026-08-11 19:23:40,532 INFO   replay step=22 MATCH orig=92a6c5bbdab54929 replayed=92a6c5bbdab54929
-2026-08-11 19:23:40,532 INFO   replay step=23 MATCH orig=47d671cd961976e6 replayed=47d671cd961976e6
-2026-08-11 19:23:40,532 INFO   replay step=24 MATCH orig=c47bcd6404df9afe replayed=c47bcd6404df9afe
-2026-08-11 19:23:40,532 INFO   replay step=25 MATCH orig=a834b4aaf6e2dd91 replayed=a834b4aaf6e2dd91
-2026-08-11 19:23:40,532 INFO   replay step=26 MATCH orig=a398667722b90af6 replayed=a398667722b90af6
-2026-08-11 19:23:40,532 INFO   replay step=27 MATCH orig=9b64f21415986ca8 replayed=9b64f21415986ca8
-2026-08-11 19:23:40,532 INFO   replay step=28 MATCH orig=02be22d676c990a4 replayed=02be22d676c990a4
-2026-08-11 19:23:40,532 INFO   replay step=29 MATCH orig=5240ed57afb7fa6b replayed=5240ed57afb7fa6b
-2026-08-11 19:23:40,532 INFO   replay step=30 MATCH orig=322c6d4043acf26a replayed=322c6d4043acf26a
-2026-08-11 19:23:40,532 INFO   replay step=31 MATCH orig=e9d2072c7e208b77 replayed=e9d2072c7e208b77
-2026-08-11 19:23:40,532 INFO   replay step=32 MATCH orig=3e449d307e4faed6 replayed=3e449d307e4faed6
-2026-08-11 19:23:40,532 INFO   replay step=33 MATCH orig=3d4b547ccde748b1 replayed=3d4b547ccde748b1
-2026-08-11 19:23:40,532 INFO   replay step=34 MATCH orig=65ba996a4320c456 replayed=65ba996a4320c456
-2026-08-11 19:23:40,532 INFO   replay step=35 MATCH orig=17d5c946a5c082d6 replayed=17d5c946a5c082d6
-2026-08-11 19:23:40,532 INFO   replay step=36 MATCH orig=7465bc4c7e767153 replayed=7465bc4c7e767153
-2026-08-11 19:23:40,532 INFO   replay step=37 MATCH orig=64d5182086c27b87 replayed=64d5182086c27b87
-2026-08-11 19:23:40,532 INFO   replay step=38 MATCH orig=3458b032c14d5720 replayed=3458b032c14d5720
-2026-08-11 19:23:40,532 INFO   replay step=39 MATCH orig=b0fd84ceb8b02e0c replayed=b0fd84ceb8b02e0c
-2026-08-11 19:23:40,532 INFO   replay step=40 MATCH orig=ea01e82dcdbf17b4 replayed=ea01e82dcdbf17b4
-2026-08-11 19:23:40,532 INFO   replay step=41 MATCH orig=dc0ed6fb92e64c7c replayed=dc0ed6fb92e64c7c
-2026-08-11 19:23:40,532 INFO   replay step=42 MATCH orig=7968cf46912f2777 replayed=7968cf46912f2777
-2026-08-11 19:23:40,532 INFO   replay step=43 MATCH orig=c1e3fe6d52780642 replayed=c1e3fe6d52780642
-2026-08-11 19:23:40,532 INFO   replay step=44 MATCH orig=c63859b856e23007 replayed=c63859b856e23007
-2026-08-11 19:23:40,532 INFO   replay step=45 MATCH orig=d458fb5faa111786 replayed=d458fb5faa111786
-2026-08-11 19:23:40,532 INFO   replay step=46 MATCH orig=3288c03f7dccc692 replayed=3288c03f7dccc692
-2026-08-11 19:23:40,532 INFO   replay step=47 MATCH orig=f2c3b8b1b620ad55 replayed=f2c3b8b1b620ad55
-2026-08-11 19:23:40,533 INFO   replay step=48 MATCH orig=6c00f14e41ed8ad0 replayed=6c00f14e41ed8ad0
-2026-08-11 19:23:40,533 INFO   replay step=49 MATCH orig=6f765f661ad16ad0 replayed=6f765f661ad16ad0
-2026-08-11 19:23:40,533 INFO   replay step=50 MATCH orig=b0faf96ff3df17ad replayed=b0faf96ff3df17ad
-2026-08-11 19:23:40,533 INFO   replay step=51 MATCH orig=cffc77150bd7e313 replayed=cffc77150bd7e313
-2026-08-11 19:23:40,533 INFO   replay step=52 MATCH orig=fe1ff94070b52a67 replayed=fe1ff94070b52a67
-2026-08-11 19:23:40,533 INFO   replay step=53 MATCH orig=cce7d10cbe295417 replayed=cce7d10cbe295417
-2026-08-11 19:23:40,533 INFO   replay step=54 MATCH orig=9649c0fb31520d26 replayed=9649c0fb31520d26
-2026-08-11 19:23:40,533 INFO   replay step=55 MATCH orig=54f8c91fdfbce710 replayed=54f8c91fdfbce710
-2026-08-11 19:23:40,533 INFO   replay step=56 MATCH orig=1463bc07df7cd450 replayed=1463bc07df7cd450
-2026-08-11 19:23:40,533 INFO   replay step=57 MATCH orig=25e2fef6a6e46534 replayed=25e2fef6a6e46534
-2026-08-11 19:23:40,533 INFO   replay step=58 MATCH orig=9cd0424e8ada6476 replayed=9cd0424e8ada6476
-2026-08-11 19:23:40,533 INFO   replay step=59 MATCH orig=39a50c0523585d72 replayed=39a50c0523585d72
-2026-08-11 19:23:40,533 INFO [PASS] replay_hash_matched
-2026-08-11 19:23:40,533 INFO 
+2026-08-11 19:45:39,871 INFO Replaying all consumption ledger entries...
+2026-08-11 19:45:39,987 INFO Replay: 60/60 batch_ids matched
+2026-08-11 19:45:39,987 INFO   replay step=0 MATCH orig=25d77d33c44c3127 replayed=25d77d33c44c3127
+2026-08-11 19:45:39,987 INFO   replay step=1 MATCH orig=25b9a8733ad5e280 replayed=25b9a8733ad5e280
+2026-08-11 19:45:39,987 INFO   replay step=2 MATCH orig=156ef8661a591b03 replayed=156ef8661a591b03
+2026-08-11 19:45:39,987 INFO   replay step=3 MATCH orig=546b14eb68e1b194 replayed=546b14eb68e1b194
+2026-08-11 19:45:39,987 INFO   replay step=4 MATCH orig=5124e85bf7fe4902 replayed=5124e85bf7fe4902
+2026-08-11 19:45:39,987 INFO   replay step=5 MATCH orig=de16290be8632163 replayed=de16290be8632163
+2026-08-11 19:45:39,987 INFO   replay step=6 MATCH orig=bcf72a5713e7556a replayed=bcf72a5713e7556a
+2026-08-11 19:45:39,987 INFO   replay step=7 MATCH orig=961d3f56c4e2f4c1 replayed=961d3f56c4e2f4c1
+2026-08-11 19:45:39,987 INFO   replay step=8 MATCH orig=7c55f35fb935264a replayed=7c55f35fb935264a
+2026-08-11 19:45:39,987 INFO   replay step=9 MATCH orig=ebd5e4d366384f55 replayed=ebd5e4d366384f55
+2026-08-11 19:45:39,987 INFO   replay step=10 MATCH orig=84be1a407dd1635a replayed=84be1a407dd1635a
+2026-08-11 19:45:39,987 INFO   replay step=11 MATCH orig=7b969c901ed2323b replayed=7b969c901ed2323b
+2026-08-11 19:45:39,987 INFO   replay step=12 MATCH orig=a46a9e4f5882e680 replayed=a46a9e4f5882e680
+2026-08-11 19:45:39,987 INFO   replay step=13 MATCH orig=361c2ba228d717b2 replayed=361c2ba228d717b2
+2026-08-11 19:45:39,987 INFO   replay step=14 MATCH orig=3e0c71aff6c27c49 replayed=3e0c71aff6c27c49
+2026-08-11 19:45:39,987 INFO   replay step=15 MATCH orig=0a2b812c6f913571 replayed=0a2b812c6f913571
+2026-08-11 19:45:39,988 INFO   replay step=16 MATCH orig=6be2ef28ba23f608 replayed=6be2ef28ba23f608
+2026-08-11 19:45:39,988 INFO   replay step=17 MATCH orig=537d435b36e67a05 replayed=537d435b36e67a05
+2026-08-11 19:45:39,988 INFO   replay step=18 MATCH orig=82c04bb9476b5c8e replayed=82c04bb9476b5c8e
+2026-08-11 19:45:39,988 INFO   replay step=19 MATCH orig=7dcd9de3070095dd replayed=7dcd9de3070095dd
+2026-08-11 19:45:39,988 INFO   replay step=20 MATCH orig=acb3c2108abe826c replayed=acb3c2108abe826c
+2026-08-11 19:45:39,988 INFO   replay step=21 MATCH orig=274e094d28c38b1a replayed=274e094d28c38b1a
+2026-08-11 19:45:39,988 INFO   replay step=22 MATCH orig=db54ce88f99375b2 replayed=db54ce88f99375b2
+2026-08-11 19:45:39,988 INFO   replay step=23 MATCH orig=81bbf233571f06eb replayed=81bbf233571f06eb
+2026-08-11 19:45:39,988 INFO   replay step=24 MATCH orig=693853753f586e0e replayed=693853753f586e0e
+2026-08-11 19:45:39,988 INFO   replay step=25 MATCH orig=2035b38d786c569e replayed=2035b38d786c569e
+2026-08-11 19:45:39,988 INFO   replay step=26 MATCH orig=dd5ab411567fba3e replayed=dd5ab411567fba3e
+2026-08-11 19:45:39,988 INFO   replay step=27 MATCH orig=176e9250ea87461a replayed=176e9250ea87461a
+2026-08-11 19:45:39,988 INFO   replay step=28 MATCH orig=732654817d2b13e4 replayed=732654817d2b13e4
+2026-08-11 19:45:39,988 INFO   replay step=29 MATCH orig=6d76144d5f0127c4 replayed=6d76144d5f0127c4
+2026-08-11 19:45:39,988 INFO   replay step=30 MATCH orig=616c8064335c8fb5 replayed=616c8064335c8fb5
+2026-08-11 19:45:39,988 INFO   replay step=31 MATCH orig=e9d2072c7e208b77 replayed=e9d2072c7e208b77
+2026-08-11 19:45:39,988 INFO   replay step=32 MATCH orig=cbc5203ffd31e58a replayed=cbc5203ffd31e58a
+2026-08-11 19:45:39,988 INFO   replay step=33 MATCH orig=5547568667351c9f replayed=5547568667351c9f
+2026-08-11 19:45:39,988 INFO   replay step=34 MATCH orig=05e1966216d05235 replayed=05e1966216d05235
+2026-08-11 19:45:39,988 INFO   replay step=35 MATCH orig=32c95084e8c441a8 replayed=32c95084e8c441a8
+2026-08-11 19:45:39,988 INFO   replay step=36 MATCH orig=38ddc5fa7911314e replayed=38ddc5fa7911314e
+2026-08-11 19:45:39,988 INFO   replay step=37 MATCH orig=f73028876d366d41 replayed=f73028876d366d41
+2026-08-11 19:45:39,988 INFO   replay step=38 MATCH orig=bb934ed62421356f replayed=bb934ed62421356f
+2026-08-11 19:45:39,988 INFO   replay step=39 MATCH orig=a3bd0ab60b86567c replayed=a3bd0ab60b86567c
+2026-08-11 19:45:39,988 INFO   replay step=40 MATCH orig=38fdc0e7dfffde82 replayed=38fdc0e7dfffde82
+2026-08-11 19:45:39,988 INFO   replay step=41 MATCH orig=f5b56c5dd9ac53f4 replayed=f5b56c5dd9ac53f4
+2026-08-11 19:45:39,988 INFO   replay step=42 MATCH orig=5c578e70fd601740 replayed=5c578e70fd601740
+2026-08-11 19:45:39,988 INFO   replay step=43 MATCH orig=1c06c88638d805e2 replayed=1c06c88638d805e2
+2026-08-11 19:45:39,988 INFO   replay step=44 MATCH orig=145b69fb374d4eae replayed=145b69fb374d4eae
+2026-08-11 19:45:39,988 INFO   replay step=45 MATCH orig=9d950582113abc9b replayed=9d950582113abc9b
+2026-08-11 19:45:39,988 INFO   replay step=46 MATCH orig=c469c1ba3a89875c replayed=c469c1ba3a89875c
+2026-08-11 19:45:39,988 INFO   replay step=47 MATCH orig=a37ac0522e19bbf9 replayed=a37ac0522e19bbf9
+2026-08-11 19:45:39,988 INFO   replay step=48 MATCH orig=104bcabde326ba56 replayed=104bcabde326ba56
+2026-08-11 19:45:39,988 INFO   replay step=49 MATCH orig=6bd2bc68f8f955b3 replayed=6bd2bc68f8f955b3
+2026-08-11 19:45:39,988 INFO   replay step=50 MATCH orig=367d5b7bc5e4174f replayed=367d5b7bc5e4174f
+2026-08-11 19:45:39,988 INFO   replay step=51 MATCH orig=1d72a4c8b0b0013a replayed=1d72a4c8b0b0013a
+2026-08-11 19:45:39,988 INFO   replay step=52 MATCH orig=7153f33c905a2b5b replayed=7153f33c905a2b5b
+2026-08-11 19:45:39,989 INFO   replay step=53 MATCH orig=a0108e307e7042c1 replayed=a0108e307e7042c1
+2026-08-11 19:45:39,989 INFO   replay step=54 MATCH orig=8233949c329b018a replayed=8233949c329b018a
+2026-08-11 19:45:39,989 INFO   replay step=55 MATCH orig=a03bd6001e6be187 replayed=a03bd6001e6be187
+2026-08-11 19:45:39,989 INFO   replay step=56 MATCH orig=1fd5976e74ecca65 replayed=1fd5976e74ecca65
+2026-08-11 19:45:39,989 INFO   replay step=57 MATCH orig=ae1f1649cdd370b7 replayed=ae1f1649cdd370b7
+2026-08-11 19:45:39,989 INFO   replay step=58 MATCH orig=d189937288f3183c replayed=d189937288f3183c
+2026-08-11 19:45:39,989 INFO   replay step=59 MATCH orig=c47ab5f7dd4c41bf replayed=c47ab5f7dd4c41bf
+2026-08-11 19:45:39,989 INFO [PASS] replay_hash_matched
+2026-08-11 19:45:39,989 INFO 
 ============================================================
   Phase 8: Fork from step 10 checkpoint
 ============================================================
-2026-08-11 19:23:40,534 INFO Forking from checkpoint: ckpt_00010_coff37029.pt
-2026-08-11 19:23:40,849 INFO step= 11 loss=54.7498 ppl=599149346794160762388480.00 lane=instruction  decision=accept           batch_id=b696f29a3bfaff57 util=29%
-2026-08-11 19:23:40,992 INFO step= 12 loss=38.3976 ppl=47408377294225408.00 lane=instruction  decision=accept           batch_id=8b5fca7ebc1c268a util=70%
-2026-08-11 19:23:41,138 INFO step= 13 loss=29.1761 ppl=4688277667840.00 lane=english_web  decision=reject           batch_id=7afe847921ea9853 util=61%
-2026-08-11 19:23:41,270 INFO step= 14 loss=27.6885 ppl=1059214852096.00 lane=code         decision=accept           batch_id=a8eb72cd1d88d559 util=100%
-2026-08-11 19:23:41,424 INFO step= 15 loss=41.4048 ppl=959131137102315520.00 lane=english_web  decision=accept           batch_id=2fff0483e9e6fa46 util=21%
-2026-08-11 19:23:41,425 INFO Fork result: original=950a87ccb6f8716f forked=2fff0483e9e6fa46
-2026-08-11 19:23:41,425 INFO [PASS] fork_diverged_from_original
-2026-08-11 19:23:41,426 INFO 
+2026-08-11 19:45:39,989 INFO Forking from checkpoint: ckpt_00010_coff5466.pt
+2026-08-11 19:45:40,283 INFO step= 11 loss=54.7498 ppl=599149346794160762388480.00 lane=instruction  decision=accept           batch_id=b696f29a3bfaff57 util=29%
+2026-08-11 19:45:40,420 INFO step= 12 loss=38.3976 ppl=47408377294225408.00 lane=instruction  decision=accept           batch_id=8b5fca7ebc1c268a util=70%
+2026-08-11 19:45:40,546 INFO step= 13 loss=29.1761 ppl=4688277667840.00 lane=english_web  decision=reject           batch_id=7afe847921ea9853 util=61%
+2026-08-11 19:45:40,679 INFO step= 14 loss=27.6885 ppl=1059214852096.00 lane=code         decision=accept           batch_id=a8eb72cd1d88d559 util=100%
+2026-08-11 19:45:40,816 INFO step= 15 loss=41.4048 ppl=959131137102315520.00 lane=english_web  decision=accept           batch_id=2fff0483e9e6fa46 util=21%
+2026-08-11 19:45:40,819 INFO Fork result: original=0a2b812c6f913571 forked=2fff0483e9e6fa46
+2026-08-11 19:45:40,820 INFO [PASS] fork_diverged_from_original
+2026-08-11 19:45:40,820 INFO 
 ============================================================
   Phase 9: Audit -> evidence.json + evidence.md
 ============================================================
-2026-08-11 19:23:41,469 INFO [PASS] evidence_bundle_written
-2026-08-11 19:23:41,469 INFO 
+2026-08-11 19:45:40,872 INFO [PASS] evidence_bundle_written
+2026-08-11 19:45:40,873 INFO 
 ============================================================
   Phase 10: Performance -> performance.json
 ============================================================
-2026-08-11 19:23:41,471 INFO Performance: {'total_steps': 59, 'total_tokens': 14339, 'total_loss_bearing_tokens': 13077, 'total_time_sec': 1.231, 'tokens_per_sec': 11648.3, 'loss_tokens_per_sec': 10623.1, 'mean_packing_utilization_pct': 46.56, 'min_packing_utilization_pct': 19.53, 'max_packing_utilization_pct': 69.53}
-2026-08-11 19:23:41,471 INFO [PASS] performance_measured
-2026-08-11 19:23:41,472 INFO 
+2026-08-11 19:45:40,875 INFO Performance: {'total_steps': 60, 'total_tokens': 15277, 'total_loss_bearing_tokens': 14012, 'total_time_sec': 5.05, 'tokens_per_sec': 3025.1, 'loss_tokens_per_sec': 2774.7, 'mean_packing_utilization_pct': 51.75, 'min_packing_utilization_pct': 17.58, 'max_packing_utilization_pct': 100.0}
+2026-08-11 19:45:40,875 INFO [PASS] performance_measured
+2026-08-11 19:45:40,875 INFO 
 ============================================================
   Phase 11: Final PASS/FAIL Report
 ============================================================
-2026-08-11 19:23:41,472 INFO 
+2026-08-11 19:45:40,875 INFO 
 ============================================================
-2026-08-11 19:23:41,472 INFO FINAL RESULTS:
-2026-08-11 19:23:41,472 INFO   [PASS] Tokenizer integrity
-2026-08-11 19:23:41,472 INFO   [PASS] Shard content hashes
-2026-08-11 19:23:41,472 INFO   [PASS] Evaluation firewall
-2026-08-11 19:23:41,472 INFO   [PASS] Loss mask / eval exclusion
-2026-08-11 19:23:41,472 INFO   [PASS] Protected floor invariants
-2026-08-11 19:23:41,472 INFO   [PASS] OPUS audit trail
-2026-08-11 19:23:41,472 INFO   [PASS] Ledger completeness
-2026-08-11 19:23:41,472 INFO   [PASS] Crash recovery
-2026-08-11 19:23:41,472 INFO   [PASS] Replay hash verification
-2026-08-11 19:23:41,472 INFO   [PASS] Fork from earlier checkpoint
-2026-08-11 19:23:41,472 INFO   [PASS] Packing utilization
-2026-08-11 19:23:41,472 INFO   [PASS] Packing correctness
-2026-08-11 19:23:41,472 INFO   [PASS] Mixture compliance
-2026-08-11 19:23:41,472 INFO   [PASS] Learning trace
-2026-08-11 19:23:41,472 INFO   [PASS] Throughput
-2026-08-11 19:23:41,472 INFO   [PASS] Position ID EOS reset
-2026-08-11 19:23:41,473 INFO ============================================================
-2026-08-11 19:23:41,473 INFO OVERALL: ALL PASS
-2026-08-11 19:23:41,473 INFO ============================================================
+2026-08-11 19:45:40,875 INFO FINAL RESULTS:
+2026-08-11 19:45:40,875 INFO   [PASS] Tokenizer integrity
+2026-08-11 19:45:40,875 INFO   [PASS] Shard content hashes
+2026-08-11 19:45:40,875 INFO   [PASS] Evaluation firewall
+2026-08-11 19:45:40,875 INFO   [PASS] Loss mask / eval exclusion
+2026-08-11 19:45:40,875 INFO   [PASS] Protected floor invariants
+2026-08-11 19:45:40,875 INFO   [PASS] OPUS audit trail
+2026-08-11 19:45:40,875 INFO   [PASS] Ledger completeness
+2026-08-11 19:45:40,875 INFO   [PASS] Crash recovery
+2026-08-11 19:45:40,876 INFO   [PASS] Replay hash verification
+2026-08-11 19:45:40,876 INFO   [PASS] Fork from earlier checkpoint
+2026-08-11 19:45:40,876 INFO   [PASS] Packing utilization
+2026-08-11 19:45:40,876 INFO   [PASS] Packing correctness
+2026-08-11 19:45:40,876 INFO   [PASS] Mixture compliance
+2026-08-11 19:45:40,876 INFO   [PASS] Learning trace
+2026-08-11 19:45:40,876 INFO   [PASS] Throughput
+2026-08-11 19:45:40,876 INFO   [PASS] Position ID EOS reset
+2026-08-11 19:45:40,876 INFO ============================================================
+2026-08-11 19:45:40,876 INFO OVERALL: ALL PASS
+2026-08-11 19:45:40,876 INFO ============================================================
 
-2026-08-11 19:23:41,473 INFO [PASS] audit_completed
-2026-08-11 19:23:41,473 INFO Submission artifacts written to: submission_artifacts/
-2026-08-11 19:23:41,473 INFO   run.log | evidence.json | evidence.md | performance.json
-2026-08-11 19:23:41,473 INFO   manifests/ | ledgers/ | checkpoints/
+2026-08-11 19:45:40,876 INFO [PASS] audit_completed
+2026-08-11 19:45:40,876 INFO Submission artifacts written to: submission_artifacts/
+2026-08-11 19:45:40,876 INFO   run.log | evidence.json | evidence.md | performance.json
+2026-08-11 19:45:40,876 INFO   manifests/ | ledgers/ | checkpoints/
