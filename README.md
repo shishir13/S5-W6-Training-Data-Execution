@@ -34,19 +34,21 @@ uv run python run_demo.py
 
 ```
 documents
-  └─ corpus.py          synthetic docs (5 lanes × 5 docs + 3 eval)
+  └─ corpus.py          synthetic docs (5 lanes x 5 docs + 3 eval)
        └─ tokenizer.py  FrozenTokenizer (GPT-2, hash-locked)
-            └─ sharding.py   .bin shards + .json manifests
-                 └─ mixture.py    curriculum phases + lane weights
-                      └─ opus.py       OPUS selector (accept/reject/defer/floor_override)
-                           └─ packing.py    TEXT/CODE/INSTRUCTION/EVAL policies
-                                └─ trainer.py   TinyGPT (2-layer, 128-dim) + masked CE loss
-                                     └─ ledger.py    consumption + learning JSONL ledgers
-                                          └─ checkpoint.py  save/load + next_batch_id
-                                               └─ recovery.py   crash detect + ledger truncation
-                                                    └─ replay.py     batch_id reconstruction
-                                                         └─ audit.py      evidence bundle
-                                                              └─ perf.py       throughput
+            └─ sharding.py   .bin shards + SHA-256 content hash
+                 └─ manifest.py   ShardManifest dataclass + file validation
+                      └─ mixture.py    curriculum phases + lane weights
+                           └─ opus.py       OPUS selector (accept/reject/defer/floor_override)
+                                └─ packing.py    TEXT/CODE/INSTRUCTION/EVAL policies + batch_id
+                                     └─ model.py     TinyGPT (2-layer, 128-dim, ~6.86M params)
+                                          └─ trainer.py   masked CE loss + AdamW
+                                               └─ ledger.py    consumption + learning JSONL ledgers
+                                                    └─ checkpoint.py  save/load + next_expected_batch_id
+                                                         └─ recovery.py   crash detect + ledger truncation
+                                                              └─ replay.py     batch_id reconstruction
+                                                                   └─ audit.py      evidence bundle
+                                                                        └─ perf.py       throughput
 ```
 
 ## Key design decisions
@@ -89,4 +91,4 @@ submission_artifacts/
 ## Model
 
 TinyGPT: 2 layers, 4 heads, d\_model=128, d\_ff=512, vocab=50257 (GPT-2).  
-~4M parameters. Runs on CPU. 60 steps complete in under 3 minutes.
+~6.86M parameters. Runs on CPU. 60 steps complete in under 3 minutes.
